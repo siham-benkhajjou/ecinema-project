@@ -6,13 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.hendisantika.entity.Customers;
 
-import com.hendisantika.entity.Nationalite;
-import com.hendisantika.entity.Salle;
 
 @CrossOrigin("http://localhost:4200")
 @Repository
+public interface CustomersRepository extends JpaRepository<Customers, Long> {
+	Page<Customers> findByLastnameStartsWith(@RequestParam("lastname")  String lastname, Pageable pageable);
 
-public interface SalleRepository extends JpaRepository<Salle, Long> {
-	Page<Salle> findByNumeroStartsWith(@RequestParam("numero")  int numero, Pageable pageable);
 }
