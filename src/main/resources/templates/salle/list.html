@@ -17,7 +17,7 @@
         <div class="box-header with-border">
             <h3 class="box-title">Liste des Salles</h3>
             <div class="box-tools pull-right">
-                <a href="salle/add" type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></a>
+                <a href="../add" type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></a>
                 <br clear="all" />
             </div>
         </div>
@@ -35,20 +35,21 @@
                     <td th:text="${aNationalite.numero}"></td>
                     <td th:text="${aNationalite.capacite}"></td>
                     <td>
-                        <a th:href="${'/salle/edit/' + aNationalite.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> |
+                        <a th:href="${'/salle/edit/' + aNationalite.id}"><i class="fa-pencil-square-o" aria-hidden="true"></i>edit</a> |
                         <a th:href="${'/salle/delete/' + aNationalite.id}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             </table>
         </div>
+        
         <div class="box-footer clearfix">
             <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="/parametre/nationalite/1"><i class="fa fa-fast-backward" aria-hidden="true"></i>
+                <li><a href="/salle/1"><i class="fa fa-fast-backward" aria-hidden="true"></i>
                 </a></li>
                 <li th:each="p : ${#numbers.sequence(1, endIndex/beginIndex)}" th:class="${p == currentIndex} ? 'active' : ''">
-                    <a th:href="${'/parametre/nationalite/' + p}" th:text="${p}"></a>
+                    <a th:href="${'/salle/' + p}" th:text="${p}"></a>
                 </li>
-                <li><a th:href="${'/parametre/nationalite/' + endIndex}"><i class="fa fa-fast-forward" aria-hidden="true"></i>
+                <li><a th:href="${'/salle/' + endIndex}"><i class="fa fa-fast-forward" aria-hidden="true"></i>
                 </a></li>
             </ul>
         </div>

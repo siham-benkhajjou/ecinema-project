@@ -63,7 +63,7 @@ public class SalleController {
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable Long id, Model model) {
 
-		model.addAttribute("personne", salleService.get(id));
+		model.addAttribute("salle", salleService.get(id));
 		return "salle/form";
 
 	}
