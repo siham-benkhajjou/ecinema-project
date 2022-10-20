@@ -15,5 +15,5 @@ import com.hendisantika.entity.Seance;
 @CrossOrigin("http://localhost:4200")
 @Repository
 public interface SeanceRepository extends JpaRepository<Seance, Long> {
-	Page<Seance> findByDateProjection(@RequestParam("dateProjection")  Date dateProjection, Pageable pageable);
+	
 }

@@ -1,6 +1,8 @@
 package com.hendisantika.controller;
 
+import com.hendisantika.entity.Seance;
 import com.hendisantika.entity.User;
+import com.hendisantika.repository.SeanceRepository;
 import com.hendisantika.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AdminPageController {
     @Autowired
     private UserRepository userRepository;
+    private SeanceRepository seanceRepository;
 
     @GetMapping({"/user/list", "/admin/user"})
     public String listUser() {
@@ -45,5 +48,12 @@ public class AdminPageController {
         model.addAttribute("user", new User());
         return "user-list";
     }
-
+	/*
+	 * @GetMapping("/seance/add") public String showFormseance(Model model) {
+	 * model.addAttribute("seance", new Seance()); return "seance-add"; }
+	 * 
+	 * @PostMapping("/seance/add") public String addSeance(Model model, Seance
+	 * seance) { seanceRepository.save(seance); model.addAttribute("seance", new
+	 * Seance()); return "seance-list"; }
+	 */
 }
