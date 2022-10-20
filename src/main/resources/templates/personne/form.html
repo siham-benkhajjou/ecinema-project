@@ -43,11 +43,21 @@
 							class="form-control" th:field="*{dateNaissance}"
 							id="dateNaissance" />
 					</div>
+					
+					
+					
+					<div>
 					<div class="form-group">
-						<label for="typePersonne">Type</label> <input type="text"
-							required="true" class="form-control" th:field="*{typePersonne}"
-							id="typePersonne" />
+						<label for="personne">Type Personne</label> 
+							<select
+							th:field="*{typePersonne}">
+							<option value="ACTEYR"> ACTEUR</option>
+							<option value="REALISATEUR" >REALISATEUR</option>
+						</select>
 					</div>
+					
+					
+					
 					<div class="form-group">
 						<label for="nationalite">Nationalité</label> <select
 							th:field="*{nationalite}">
