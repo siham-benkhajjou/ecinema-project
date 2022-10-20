@@ -73,23 +73,9 @@
 								class="profile-user-img img-responsive img-circle"
 								th:src="@{*{photo}}" alt="Actor/Director profile picture">
 						</div>
-					</div>
-<<<<<<< HEAD
-					
-					
-					
-					<div class="form-group">
-						<label for="nationalite">Nationalite</label> <select
-							th:field="*{nationalite}">
-							<option th:each="nat : ${listeNationalites}" th:value="${nat.id}"
-								th:text="${nat.libelle}"
-								th:selected="(${nationalite} != null)?${nat.id} == ${nationalite.id} : false">
-							</option>
-						</select>
-=======
+
 					<div class="box-footer">
 						<button class="btn btn-primary" type="submit">Enregistrer</button>
->>>>>>> a6c612eaf2147f7383748991047f5baf983c5c6b
 					</div>
 			</form>
 		</div>
