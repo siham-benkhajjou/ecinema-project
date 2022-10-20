@@ -39,7 +39,6 @@ public class FilmController {
     private GenreService genreService;
     private PersonneService personneService;
     private NationaliteService natService;
-    private MediaService mediaService;
     private final String UPLOAD_DIR = "/src/main/resources/static/photos/films/";
 
     @Autowired
@@ -47,11 +46,7 @@ public class FilmController {
         this.filmService = filmService;
     }
     
-    @Autowired
-    public void setMediaService(MediaService mediaService) {
-        this.mediaService = mediaService;
-    }
-    
+
     @Autowired
     public void setNatService(NationaliteService natService) {
         this.natService = natService;
