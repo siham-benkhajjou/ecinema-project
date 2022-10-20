@@ -116,7 +116,7 @@ public class ParametreController {
     @PostMapping(value = "nationalite/save")
     public String save(Nationalite nationalite, final RedirectAttributes ra) {
 
-    	Nationalite save = nationaliteService.save(nationalite);
+    	nationaliteService.save(nationalite);
         ra.addFlashAttribute("successFlash", "Personne Ajoutée avec succès");
         return "redirect:/parametre/nationalite/1";
 
