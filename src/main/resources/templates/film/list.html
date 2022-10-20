@@ -45,10 +45,10 @@
                     <td th:text="${afilm.nationalite.libelle}"></td>
                     <td th:text="${afilm.realisateur.prenom+' '+afilm.realisateur.nom}"></td>
                     <td th:text="${afilm.duree}"></td>
-                     <td th:text="${afilm.annee}"></td>
+                    <td th:text="${afilm.annee}"></td>
                     <td>
-                        <a th:href="${'/film/edit/' + afilm.id}"><i class="fa fa-edit"></i></a> |
-                        <a th:href="${'/film/delete/' + afilm.id}"><i class="fa fa-trash"></i></a>
+                        <a th:href="${'/film/edit/' + afilm.id}"><i class="fa fa-edit"></i></a> 
+                        <a th:href="${'/film/delete/' + afilm.id}"><i class="fa fa-trash"></i></a>                        
                     </td>
                 </tr>
             </table>
