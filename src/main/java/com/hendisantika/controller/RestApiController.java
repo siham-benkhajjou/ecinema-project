@@ -9,21 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hendisantika.entity.Nationalite;
+
 @CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("api")
 public class RestApiController {
 	
 	@GetMapping(path="/nationalites", produces = "application/json")
-    public @ResponseBody List<Course> getAllPersons() {
-    	List<Course> allCourses = new ArrayList<Course>();
-    	allCourses.add(new Course("Java Pour le Web", 12));
-    	allCourses.add(new Course("Machine Learning for Dummies", 10));
-    	allCourses.add(new Course("PHP 7 pour les Nuls", 8));
-    	allCourses.add(new Course("Design Patterns", 15));
-    	allCourses.add(new Course("UML en action", 6));
-    	//System.out.println("Size of List allCourses : "+allCourses.size());
-        return allCourses;
+    public @ResponseBody List<Nationalite> getAllNationalites() {
+    	List<Nationalite> allNationalite = new ArrayList<Nationalite>();
+    	
+    	//System.out.println("Size of List allNationalite : "+allCourses.size());
+        return allNationalite;
     }
 	
 	class Course implements Serializable{
