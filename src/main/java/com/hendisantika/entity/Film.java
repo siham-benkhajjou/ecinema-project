@@ -21,7 +21,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
+@Data
 @Entity
 @Getter
 @Setter
@@ -41,7 +41,7 @@ public class Film extends AbstractModel<Long>{
     private int annee;
 	
 	  @Column(nullable = true)
-	    private String cover;
+	  private String cover;
 	    
 	
 	@ManyToOne(fetch = FetchType.EAGER)
