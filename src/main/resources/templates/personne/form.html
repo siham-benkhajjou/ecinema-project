@@ -59,7 +59,7 @@
 					
 					
 					<div class="form-group">
-						<label for="nationalite">Nationalité</label> <select
+						<label for="nationalite">Nationalite</label> <select
 							th:field="*{nationalite}">
 							<option th:each="nat : ${listeNationalites}" th:value="${nat.id}"
 								th:text="${nat.libelle}"
