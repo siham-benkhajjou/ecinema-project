@@ -28,6 +28,7 @@ import com.hendisantika.service.GenreService;
 import com.hendisantika.service.MediaService;
 import com.hendisantika.service.NationaliteService;
 import com.hendisantika.service.PersonneService;
+import com.hendisantika.util.AddActors;
 import com.hendisantika.util.FileUploadUtil;
 
 @Controller
@@ -125,7 +126,7 @@ public class FilmController {
     }
 
     @PostMapping(value = "/save")
-    public String save(@RequestParam("file") MultipartFile file,Film film, final RedirectAttributes ra) {
+    public String save(@RequestParam("file") MultipartFile file,Film film, @RequestParam("acteur") String acteur,final RedirectAttributes ra) {
     	//check if is there a file
     	if (!file.isEmpty()) {
     		// normalize the file path
@@ -135,10 +136,10 @@ public class FilmController {
             	String uuid = UUID.randomUUID().toString();
             	String uploadDir = UPLOAD_DIR;
             	FileUploadUtil.saveFile(uploadDir, uuid+fileName, file);
-            	Media media = new Media();
-            	media.setMedia("/photos/personnes/"+uuid+fileName);
-            	media.setFilm(film);
-            	mediaService.save(media);
+            	film.setCover("/photos/covers/"+uuid+fileName);
+            	List<Personne> acteurs = AddActors.stringToPersonne(acteur, personneService);
+            	film.setActeurs(acteurs);
+            	filmService.save(film);
             } catch (IOException e) {
             	System.out.println("#####\nUpload Error:\n"+e);
                 e.printStackTrace();
