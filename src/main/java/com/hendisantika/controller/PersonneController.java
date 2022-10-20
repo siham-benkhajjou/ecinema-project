@@ -104,4 +104,11 @@ public class PersonneController {
 		model.addAttribute("listeNationalites", natList);
 		return "personne/form";
 	}
+	
+	@GetMapping(value = "/delete/{id}")
+	public String delete(@PathVariable Long id) {
+		
+		personneService.delete(id);
+		return "redirect:/personne";
+	}
 }
