@@ -111,4 +111,11 @@ public class PersonneController {
 		personneService.delete(id);
 		return "redirect:/personne";
 	}
+	
+	@GetMapping(value = "/details/{id}")
+	public String details(@PathVariable Long id, Model model) {
+		
+		
+		return "personne/details";
+	}
 }
