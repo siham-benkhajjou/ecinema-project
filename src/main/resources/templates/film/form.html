@@ -54,9 +54,9 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="nationalite">Gender</label> <select
+						<label for="nationalite">Genres</label> <select
 							th:field="*{genre}">
-							<option th:each="gen : ${listegenres}" th:value="${gen.id}"
+							<option th:each="gen : ${listeGenres}" th:value="${gen.id}"
 								th:text="${gen.libelle}"
 								th:selected="(${genre} != null)?${gen.id} == ${genre.id} : false">
 							</option>
@@ -81,7 +81,7 @@
 					<div class="form-group">
 						<label for="actor">Actors</label> 
 						<select id="actor" name="acteur" multiple>
-							<option th:each="act : ${listActeurs}" th:value="${act.id}" th:text="${act.prenom +' '+act.nom}"></option>
+							<option th:each="act : ${listPersonnes}" th:value="${act.id}" th:text="${act.prenom +' '+act.nom}"></option>
 						</select>
 					</div>
 					<div class="form-group">
