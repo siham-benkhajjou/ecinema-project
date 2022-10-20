@@ -43,42 +43,40 @@
 							class="form-control" th:field="*{dateNaissance}"
 							id="dateNaissance" />
 					</div>
-					
-					
-					
+
+
+
 					<div>
-					<div class="form-group">
-						<label for="personne">Type Personne</label> 
-							<select
-							th:field="*{typePersonne}">
-							<option value="ACTEUR"> ACTEUR</option>
-							<option value="REALISATEUR" >REALISATEUR</option>
-						</select>
+						<div class="form-group">
+							<label for="personne">Type Personne</label> <select
+								th:field="*{typePersonne}">
+								<option value="ACTEUR">ACTEUR</option>
+								<option value="REALISATEUR">REALISATEUR</option>
+							</select>
+						</div>
+
+
+						<div class="form-group">
+							<label for="nationalite">Nationalité</label> <select
+								th:field="*{nationalite}">
+								<option th:each="nat : ${listeNationalites}"
+									th:value="${nat.id}" th:text="${nat.libelle}"
+									th:selected="(${nationalite} != null)?${nat.id} == ${nationalite.id} : false">
+								</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="typePersonne">Photo</label> <input type="file"
+								required="false" class="form-control" name="file" id="photo" />
+							<div th:if="${personne.photo == null}">Aucune photo...</div>
+							<img th:if="${personne.photo != null}"
+								class="profile-user-img img-responsive img-circle"
+								th:src="@{*{photo}}" alt="Actor/Director profile picture">
+						</div>
 					</div>
-					
-					
-					
-					<div class="form-group">
-						<label for="nationalite">Nationalité</label> <select
-							th:field="*{nationalite}">
-							<option th:each="nat : ${listeNationalites}" th:value="${nat.id}"
-								th:text="${nat.libelle}"
-								th:selected="(${nationalite} != null)?${nat.id} == ${nationalite.id} : false">
-							</option>
-						</select>
+					<div class="box-footer">
+						<button class="btn btn-primary" type="submit">Enregistrer</button>
 					</div>
-					<div class="form-group">
-						<label for="typePersonne">Photo</label> <input type="file"
-							required="false" class="form-control" name="file" id="photo" />
-						<div th:if="${personne.photo == null}">Aucune photo...</div>
-						<img th:if="${personne.photo != null}"
-							class="profile-user-img img-responsive img-circle"
-							th:src="@{*{photo}}" alt="Actor/Director profile picture">
-					</div>
-				</div>
-				<div class="box-footer">
-					<button class="btn btn-primary" type="submit">Enregistrer</button>
-				</div>
 			</form>
 		</div>
 	</div>
