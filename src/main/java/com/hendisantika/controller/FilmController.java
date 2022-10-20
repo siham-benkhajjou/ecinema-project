@@ -21,6 +21,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hendisantika.entity.Film;
 import com.hendisantika.entity.Media;
+import com.hendisantika.entity.Personne;
+import com.hendisantika.entity.Personne.TypePersonne;
 import com.hendisantika.service.FilmService;
 import com.hendisantika.service.GenreService;
 import com.hendisantika.service.MediaService;
@@ -90,9 +92,17 @@ public class FilmController {
 
     @GetMapping("/add")
     public String add(Model model) {
+    	
+    	
+    	List<Personne> listActeurs = new ArrayList<Personne>();
+    	List<Personne> listRealisateurs = new ArrayList<Personne>();
+    	listActeurs = personneService.getActeurs();
+    	listRealisateurs =personneService.getDirector();
+    	
+        model.addAttribute("listActeurs", listActeurs);
+        model.addAttribute("listRealisateurs", listRealisateurs);
         model.addAttribute("film", new Film());
         model.addAttribute("listeNationalites", natService.getListAll());
-        model.addAttribute("listPersonnes", personneService.getListAll());
         model.addAttribute("listeGenres", genreService.getListAll());
         return "film/form";
 
@@ -100,9 +110,15 @@ public class FilmController {
 
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable Long id, Model model) {
+    	
+    	List<Personne> listActeurs = new ArrayList<Personne>();
+    	List<Personne> listRealisateurs = new ArrayList<Personne>();
+    	listActeurs = personneService.getActeurs();
+    	listRealisateurs =personneService.getDirector();
         model.addAttribute("film", filmService.get(id));
         model.addAttribute("listeGenres", genreService.getListAll());
-        model.addAttribute("listPersonnes", personneService.getListAll());
+        model.addAttribute("listActeurs", listActeurs);
+        model.addAttribute("listRealisateurs", listRealisateurs);
         model.addAttribute("listeNationalites", natService.getListAll());
         return "film/form";
 

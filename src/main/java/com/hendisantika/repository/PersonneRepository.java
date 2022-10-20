@@ -1,6 +1,7 @@
 package com.hendisantika.repository;
 
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,5 +22,8 @@ public interface PersonneRepository extends JpaRepository<Personne, Long> {
 	Page<Personne> findByTypePersonne(@RequestParam("typePersonne") TypePersonne typePersonne, Pageable pageable);
 	Page<Personne> findByDateNaissanceGreaterThanEqual(@RequestParam("dateNs") Date dateNs, Pageable pageable);
 	Page<Personne> findByNomContainingOrPrenomContaining(@RequestParam("nom") String nom,@RequestParam("prenom") String prenom, Pageable pageable);
+	List<Personne> findByTypePersonneIs(@RequestParam("typePersonne") TypePersonne typePersonne);
+
+
 }
  
