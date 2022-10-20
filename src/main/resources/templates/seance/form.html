@@ -63,28 +63,19 @@
 								aria-hidden="true"></span></span>
 						</div>
 						<div class="form-group">
-							<label>Date de projection : </label>
-							<div class="input-group date" id="reservationdate"
-								data-target-input="nearest">
-								<input type="text" th:field="*{dateProjection}"
-									class="form-control datetimepicker-input"
-									data-target="#reservationdate">
-								<div class="input-group-append" data-target="#reservationdate"
-									data-toggle="datetimepicker">
-									<div class="input-group-text">
-										<i class="fa fa-calendar"></i>
-									</div>
-								</div>
-							</div>
-						</div>
+						<label for="dateProjection">Date de projection</label> <input
+							type="date" value="1974-08-13" required="true"
+							class="form-control" th:field="*{dateProjection}"
+							id="dateProjection" />
+				     	</div>
 						<div class="bootstrap-timepicker">
 							<div class="form-group">
 								<label>Heure de debut : </label>
+								
 								<div class="input-group date" id="timepicker"
 									data-target-input="nearest">
-									<input type="text" th:field="*{heureDebut}"
-										class="form-control datetimepicker-input"
-										data-target="#timepicker">
+									<input type="time" id="appt" name="appt"
+                                  min="07:00" max="23:59" required>
 									<div class="input-group-append" data-target="#timepicker"
 										data-toggle="datetimepicker">
 										<div class="input-group-text">
@@ -101,9 +92,8 @@
 								<label>Heure de fin : </label>
 								<div class="input-group date" id="timepickerfin"
 									data-target-input="nearest">
-									<input type="text" th:field="*{heureFin}"
-										class="form-control datetimepicker-input"
-										data-target="#timepickerfin">
+									<input type="time" id="appt" name="appt"
+                                  min="07:00" max="23:59" required>
 									<div class="input-group-append" data-target="#timepickerfin"
 										data-toggle="datetimepicker">
 										<div class="input-group-text">
