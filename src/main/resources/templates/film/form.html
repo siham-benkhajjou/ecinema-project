@@ -85,8 +85,8 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="photo">Picture</label> <input type="file"
-							 class="form-control" name="file" id="photo" />
+						<label for="photo">Picture</label>
+						<input type="file" class="form-control" name="file" id="photo" />
 						<div th:if="${film.cover == null}">Aucune photo...</div>
 						<img th:if="${film.cover != null}"
 							class="profile-user-img img-responsive img-circle"
