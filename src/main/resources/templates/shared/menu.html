@@ -26,9 +26,8 @@
 
 			<ul class="nav nav-pills nav-sidebar flex-column"
 				data-accordion="false" data-widget="treeview" role="menu">
-				<!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
-
+				
+					
 				<li class="nav-item"><a class="nav-link" href="/"> <i
 						class="nav-icon fas fa-th"></i>
 						<p>Dashboard</p>
@@ -36,27 +35,33 @@
 
 
 
-				<li class="nav-item has-treeview"><a class="nav-link" href="#">
-						<i class="nav-icon fas fa-copy"></i>
+				<li class="nav-item has-treeview">
+						<a class="nav-link" href="#">
+						<i class="fa fa-users" aria-hidden="true"></i>
 						<p>
 							User <i class="right fas fa-angle-left"></i>
 						</p>
-				</a>
+
+						</a>
+					
 					<ul class="nav nav-treeview">
+						<li class="nav-item"><a class="nav-link" href="/user/add">
+							<i class="fa fa-plus"></i>
+							<p>Add User</p>
+						</a></li>
 						<li class="nav-item"><a class="nav-link" href="/user/list">
-								<i class="far fa-circle nav-icon"></i>
-								<p>List User</p>
+							<i class="fa fa-list"></i> 
+							<p>List User</p>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="/user/list2">
-								<i class="far fa-circle nav-icon"></i>
-								<p>List User2</p>
-						</a></li>
-						<li class="nav-item"><a class="nav-link" href="/user/add">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Add User</p>
-						</a></li>
-					</ul></li>
-					<li class="nav-item has-treeview"><a class="nav-link" href="#">
+							<i class="fa fa-list"></i> 
+							<p>List User2</p>
+					</a></li>
+
+				</ul>
+				</li>
+
+				<li class="nav-item has-treeview"><a class="nav-link" href="#">
 						<i class="fa fa-user"></i>
 						<p>
 							Acteurs/Realisateurs <i class="right fas fa-angle-left"></i>
@@ -72,30 +77,36 @@
 								<i class="fa fa-list"></i> Liste des Acteurs/Realisateurs
 						</a></li>
 					</ul>
-				<li class="nav-item has-treeview"><a class="nav-link" href="/">
+					
+				<li class="nav-item has-treeview">
+				<a class="nav-link" href="/">
 						<i class="fa fa-film" aria-hidden="true"></i>
 						<p>
 							Films <i class="right fas fa-angle-left"></i>
 						</p>
-				</a>
-					<ul class="nav nav-treeview">
-						<li class="nav-item"><a class="nav-link" href="/film/1">
-								<i class="far fa-circle nav-icon"></i>
-								<p>list</p>
-						</a></li>
+					</a>
+				<ul class="nav nav-treeview">
+				<li class="nav-item"><a class="nav-link" href="/film/add">
+						<i class="fa fa-plus"></i>
+						<p>add</p>
+				</a></li>
+				
+					<li class="nav-item"><a class="nav-link" href="/film/1">
+							<i class="fa fa-list"></i> 
+							<p>list</p>
+					</a></li>
 
-						<li class="nav-item"><a class="nav-link" href="/film/add">
-								<i class="far fa-circle nav-icon"></i>
-								<p>add</p>
-						</a></li>
-<!-- 						<li class="nav-item"> -->
-<!-- 							                            <a class="nav-link" th;href="@{'/film/details' + ${film.id}}"> -->
-<!-- 							<a class="nav-link" herf="/film/details"> <i -->
-<!-- 								class="far fa-circle nav-icon"></i> -->
-<!-- 								<p>details</p> -->
-<!-- 						</a> -->
-<!-- 						</li> -->
-					</ul></li>
+
+					<!-- 						<li class="nav-item"> -->
+					<!-- 							                            <a class="nav-link" th;href="@{'/film/details' + ${film.id}}"> -->
+					<!-- 							<a class="nav-link" herf="/film/details"> <i -->
+					<!-- 								class="far fa-circle nav-icon"></i> -->
+					<!-- 								<p>details</p> -->
+					<!-- 						</a> -->
+					<!-- 						</li> -->
+				</ul>
+				</li>
+
 
 				<li class="nav-item has-treeview"><a class="nav-link" href="#">
 						<i class="nav-icon fa fa-cogs"></i>
@@ -105,12 +116,13 @@
 				</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item"><a class="nav-link"
-							href="parametre/nationalite"> <i
-								class="far fa-circle nav-icon"></i>
+							href="parametre/nationalite"> 
+							<i class="fa fa-globe" aria-hidden="true"></i>
 								<p>Nationalite</p>
 						</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="parametre/genre"> <i class="far fa-circle nav-icon"></i>
+							href="parametre/genre"> 
+							<i class="fa fa-child" aria-hidden="true"></i>
 								<p>Genre</p>
 						</a></li>
 					</ul></li>
@@ -123,16 +135,16 @@
 				</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item"><a class="nav-link" href="/salle/add">
-								<i class="far fa-circle nav-icon"></i>
+								<i class="fa fa-plus"></i>
 								<p>Add hall</p>
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="/salle"> <i
-								class="far fa-circle nav-icon"></i>
+						<li class="nav-item"><a class="nav-link" href="/salle"> 
+								<i class="fa fa-list"></i> 
 								<p>List halls</p>
 						</a></li>
 					</ul></li>
-					
-					<li class="nav-item "><a class="nav-link" href="/"> <i
+
+				<li class="nav-item "><a class="nav-link" href="/"> <i
 						class="fa fa-home" aria-hidden="true"></i>
 						<p>
 							Seances <i class="right fas fa-angle-left"></i>
@@ -140,11 +152,11 @@
 				</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item"><a class="nav-link" href="/seance/add">
-								<i class="far fa-circle nav-icon"></i>
+								<i class="fa fa-plus"></i>
 								<p>Add seance</p>
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="/seance"> <i
-								class="far fa-circle nav-icon"></i>
+						<li class="nav-item"><a class="nav-link" href="/seance">
+								<i class="fa fa-list"></i> 
 								<p>List seances</p>
 						</a></li>
 					</ul></li>
@@ -156,11 +168,11 @@
 				</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item"><a class="nav-link"
-							href="/customers/add"> <i class="far fa-circle nav-icon"></i>
+							href="/customers/add"> <i class="fa fa-plus"></i>
 								<p>Add customer</p>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="/customers">
-								<i class="far fa-circle nav-icon"></i>
+								<i class="fa fa-list"></i> 
 								<p>List customer</p>
 						</a></li>
 					</ul></li>
