@@ -16,5 +16,5 @@ public class SeanceService extends AbstractService<Seance, Long> {
 	protected JpaRepository<Seance, Long> getRepository() {
 		return seanceRepository;
 	}
-
+	
 }
