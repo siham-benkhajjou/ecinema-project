@@ -33,8 +33,9 @@
                     <td th:text="${aNationalite.id}"></td>
                     <td th:text="${aNationalite.libelle}"></td>
                     <td>
-                        <a th:href="${'/parametre/nationalite/edit/' + aNationalite.id}">Modifier</a> |
-                        <a th:href="${'/parametre/nationalite/delete/' + aNationalite.id}">Supprimer</a>
+                        <a th:href="${'/parametre/nationalite/edit/' + aNationalite.id}"><i
+								class="fa fa-edit"></i></a> |
+                        <a th:href="${'/parametre/nationalite/delete/' + aNationalite.id}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             </table>

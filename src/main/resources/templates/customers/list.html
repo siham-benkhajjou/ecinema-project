@@ -36,8 +36,9 @@
                     <td th:text="${aCustomer.email}"></td>
                     <td th:text="${#dates.format(aCustomer.addedDate, 'dd/MM/yyyy')}"></td>
                     <td>
-                        <a th:href="${'/customers/edit/' + aCustomer.id}">Edit</a> |
-                        <a th:href="${'/customers/delete/' + aCustomer.id}">Delete</a>
+                        <a th:href="${'/customers/edit/' + aCustomer.id}"><i
+								class="fa fa-edit"></i></a> |
+                        <a th:href="${'/customers/delete/' + aCustomer.id}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             </table>
