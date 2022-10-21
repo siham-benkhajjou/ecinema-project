@@ -65,7 +65,7 @@ public class Personne extends AbstractModel<Long>{
     @JoinColumn(name="NATIONALITE_ID")
     private Nationalite nationalite;
     
-    @ManyToMany(mappedBy="acteurs")
+    @ManyToMany(mappedBy="acteurs", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<Film> films;
     
