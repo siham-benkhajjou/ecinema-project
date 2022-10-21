@@ -24,4 +24,5 @@ public class SalleService extends AbstractService<Salle, Long> {
         return salleRepository.findAll(PageRequest.of(page, size, Sort.by("capacite", "numero").descending()));
     }
 
+	
 }

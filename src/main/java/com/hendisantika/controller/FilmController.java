@@ -20,12 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hendisantika.entity.Film;
-import com.hendisantika.entity.Media;
 import com.hendisantika.entity.Personne;
-import com.hendisantika.entity.Personne.TypePersonne;
 import com.hendisantika.service.FilmService;
 import com.hendisantika.service.GenreService;
-import com.hendisantika.service.MediaService;
 import com.hendisantika.service.NationaliteService;
 import com.hendisantika.service.PersonneService;
 import com.hendisantika.util.AddActors;
