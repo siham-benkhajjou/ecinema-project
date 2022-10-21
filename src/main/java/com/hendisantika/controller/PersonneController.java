@@ -114,7 +114,10 @@ public class PersonneController {
 	
 	@GetMapping(value = "/details/{id}")
 	public String details(@PathVariable Long id, Model model) {
+		Personne personne = personneService.get(id);
 		
+		model.addAttribute("personne", personne);
+		model.addAttribute("listFlims", personne.getFilms());
 		
 		return "personne/details";
 	}

@@ -20,12 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hendisantika.entity.Film;
-import com.hendisantika.entity.Media;
 import com.hendisantika.entity.Personne;
-import com.hendisantika.entity.Personne.TypePersonne;
 import com.hendisantika.service.FilmService;
 import com.hendisantika.service.GenreService;
-import com.hendisantika.service.MediaService;
 import com.hendisantika.service.NationaliteService;
 import com.hendisantika.service.PersonneService;
 import com.hendisantika.util.AddActors;
@@ -39,7 +36,7 @@ public class FilmController {
     private GenreService genreService;
     private PersonneService personneService;
     private NationaliteService natService;
-    private final String UPLOAD_DIR = "/src/main/resources/static/photos/films/";
+    private final String UPLOAD_DIR = "/src/main/resources/static/photos/covers/";
 
     @Autowired
     public void setFilmService(FilmService filmService) {
@@ -128,10 +125,12 @@ public class FilmController {
             String fileName = StringUtils.cleanPath(file.getOriginalFilename());
          // save the file on the local file system
             try {
-            	String uuid = UUID.randomUUID().toString();
-            	String uploadDir = UPLOAD_DIR;
-            	FileUploadUtil.saveFile(uploadDir, uuid+fileName, file);
-            	film.setCover("/photos/covers/"+uuid+fileName);
+            	
+        		String uuid = UUID.randomUUID().toString();
+				String uploadDir = UPLOAD_DIR;
+				FileUploadUtil.saveFile(uploadDir, uuid + fileName, file);
+
+				film.setCover("/photos/covers/"+uuid+fileName);
             	List<Personne> acteurs = AddActors.stringToPersonne(acteur, personneService);
             	film.setActeurs(acteurs);
             	filmService.save(film);
@@ -142,7 +141,6 @@ public class FilmController {
     	}
     	
     	
-    	Film save = filmService.save(film);
         ra.addFlashAttribute("successFlash", "Film Ajoutée avec succès");
         return "redirect:/film";
 
