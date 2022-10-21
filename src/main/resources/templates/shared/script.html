@@ -5,6 +5,16 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)
+
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+          theme: 'bootstrap4'
+        })
+    })
 </script>
 <!-- Bootstrap 4 -->
 <script src="/webjars/AdminLTE/3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -32,3 +42,4 @@
 <script src="/webjars/AdminLTE/3.2.0/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/webjars/AdminLTE/3.2.0/dist/js/demo.js"></script>
+<script src="/webjars/AdminLTE/3.2.0/plugins/select2/js/select2.full.min.js"></script>
