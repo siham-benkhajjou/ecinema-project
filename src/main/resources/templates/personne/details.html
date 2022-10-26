@@ -7,10 +7,13 @@
 </head>
 <body>
 
-<section layout:fragment="header" class="content-header" >
+
+	<div layout:fragment="content">
+
+		<section layout:fragment="header" class="content-header">
 			<div class="container-fluid">
 				<div class="row mb-2">
-					<div class="col-sm-6">
+					<div class="">
 						<h1>Profile</h1>
 					</div>
 					<div class="col-sm-6">
@@ -23,14 +26,10 @@
 			</div>
 		</section>
 
-<div class="content-wrapper">
-
-		
-		<section layout:fragment="content" class="content">
+		<section class="content">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-3">
-
 						<div class="card card-primary card-outline">
 							<div class="card-body box-profile">
 								<div class="text-center">
@@ -55,52 +54,55 @@
 
 
 					</div>
+					<div class="col-md-9 container-fluid">
+						<div class="row">
+							<div th:each="film : ${listFlims}" class="col-md-4">
+								<div class="card card-widget widget-user shadow">
 
-					<div th:each="film : ${listFlims}"
-						class="card card-widget widget-user shadow">
-
-						<div class="widget-user-header bg-info">
-							<h3 class="widget-user-username" th:text="${film.titre}"></h3>
-							<h5 class="widget-user-desc" th:text="${film.genre.libelle}"></h5>
-						</div>
-						<div class="widget-user-image">
-							<img class="img-circle elevation-2" th:src="@{${film.cover}}"
-								alt="User Avatar">
-						</div>
-						<div class="card-footer">
-							<div class="row">
-								<div class="col-sm-4 border-right">
-									<div class="description-block">
-										<h5 class="description-header" th:text="${film.duree}+' min'"></h5>
-										<span class="description-text">Duree</span>
+									<div class="widget-user-header bg-info">
+										<h3 class="widget-user-username" th:text="${film.titre}"></h3>
+										<h5 class="widget-user-desc" th:text="${film.genre.libelle}"></h5>
 									</div>
-
-								</div>
-
-								<div class="col-sm-4 border-right">
-									<div class="description-block">
-										<h5 class="description-header" th:text="${film.annee}"></h5>
-										<span class="description-text">Annee</span>
+									<div class="widget-user-image">
+										<img class="img-circle elevation-2" th:src="@{${film.cover}}"
+											alt="User Avatar">
 									</div>
+									<div class="card-footer">
+										<div class="row">
+											<div class="col-sm-4 border-right">
+												<div class="description-block">
+													<h5 class="description-header"
+														th:text="${film.duree}+' min'"></h5>
+													<span class="description-text">Duree</span>
+												</div>
 
-								</div>
+											</div>
 
-								<div class="col-sm-4">
-									<div class="description-block">
-										<h5 class="description-header"
-											th:text="${film.realisateur.nom+' '+film.realisateur.prenom}"></h5>
-										<span class="description-text">Realisateur</span>
+											<div class="col-sm-4 border-right">
+												<div class="description-block">
+													<h5 class="description-header" th:text="${film.annee}"></h5>
+													<span class="description-text">Annee</span>
+												</div>
+
+											</div>
+
+											<div class="col-sm-4">
+												<div class="description-block">
+													<h5 class="description-header"
+														th:text="${film.realisateur.nom+' '+film.realisateur.prenom}"></h5>
+													<span class="description-text">Realisateur</span>
+												</div>
+
+											</div>
+
+										</div>
 									</div>
-
 								</div>
-
 							</div>
-
 						</div>
 					</div>
-				</div>
-				
 
+				</div>
 			</div>
 
 		</section>
