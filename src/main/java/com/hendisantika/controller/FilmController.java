@@ -156,7 +156,7 @@ public class FilmController {
     
     @GetMapping("/details/{id}")
     public String showDetails(@PathVariable Long id, Model model) {
-        model.addAttribute("personne", filmService.get(id));
+    	model.addAttribute("film", filmService.get(id));
         return "film/details";
 
     }
